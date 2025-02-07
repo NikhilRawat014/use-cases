@@ -6,4 +6,4 @@ workflows:
     jobs:
       - accuknox-scan/dast:
           INPUT_SOFT_FAIL: false
-          TARGET_URL: "http://testhtml5.vulnweb.com"
+          TARGET_URL: "http://testphp.vulnweb.com/"
