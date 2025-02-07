@@ -21,4 +21,4 @@ jobs:
           accuknox_token: ${{ secrets.ACCUKNOX_POC_TOKEN }}
           label: "AKDAST"
           severity_threshold: "High"
-          scan_type: "baseline"
+          scan_type: "full-scan"
