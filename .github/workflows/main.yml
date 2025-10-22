@@ -56,8 +56,8 @@ jobs:
         uses: accuknox/secret-scan-action@v1.0.1
         with:
           token: ${{ secrets.ACCUKNOX_TOKEN }}
-          tenant_id: 3730
-          label: "SPOC"
+          tenant_id: 167
+          label: "dast00test"
           endpoint:  "cspm.demo.accuknox.com"
           fail: false
           use_extended_ruleset: true
@@ -82,9 +82,9 @@ jobs:
         uses: accuknox/sast-scan-opengrep-action@1.0.0
         with:
           accuknox_endpoint: "cspm.demo.accuknox.com"
-          accuknox_tenant: 3730
+          accuknox_tenant: 167
           accuknox_token: ${{ secrets.ACCUKNOX_TOKEN }}
-          accuknox_label: "SPOC"
+          accuknox_label: "dast00test"
           input_soft_fail: "true"
           upload_artifact: false
 
