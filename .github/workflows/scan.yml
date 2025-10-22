@@ -13,31 +13,31 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Run AccuKnox DAST Scan
-        uses: Vickydew1/dast-scan-action@main
-        with:
-          accuknox_token: ${{ secrets.ACCUKNOX_TOKEN }}
-          accuknox_label: "SPOC"
-          accuknox_endpoint: "cspm.demo.accuknox.com"
-          target_url: "http://testphp.vulnweb.com/"
-          dast_scan_type: "baseline"
-          severity_threshold: "HIGH"
-          soft_fail: "true"
+      # - name: Run AccuKnox DAST Scan
+      #   uses: Vickydew1/dast-scan-action@main
+      #   with:
+      #     accuknox_token: ${{ secrets.ACCUKNOX_TOKEN }}
+      #     accuknox_label: "SPOC"
+      #     accuknox_endpoint: "cspm.demo.accuknox.com"
+      #     target_url: "http://testphp.vulnweb.com/"
+      #     dast_scan_type: "baseline"
+      #     severity_threshold: "HIGH"
+      #     soft_fail: "true"
           
 
-      # - name: "Run Accuknox SAST"
-      #   uses:  r3d-shadow/sast-scan-action@main
-      #   with:
-      #     sonar_token: ${{ secrets.SONAR_CLOUD_TOKEN }}
-      #     sonar_host_url: "https://sonarcloud.io"
-      #     sonar_project_key: "r3d-shadow_azure-plugin-test"
-      #     sonar_organization_id: "r3d-shadow"
-      #     accuknox_endpoint: "cspm.demo.accuknox.com"
-      #     accuknox_token: ${{ secrets.ACCUKNOX_TOKEN }}
-      #     tenant_id: 3730
-      #     label: "SPOC"
-      #     input_soft_fail: true
-      #     skip_sonar_scan: true
+      - name: "Run Accuknox SAST"
+        uses:  r3d-shadow/sast-scan-action@main
+        with:
+          sonar_token: ${{ secrets.SONAR_CLOUD_TOKEN }}
+          sonar_host_url: "https://sonarcloud.io"
+          sonar_project_key: "r3d-shadow_azure-plugin-test"
+          sonar_organization_id: "r3d-shadow"
+          accuknox_endpoint: "cspm.demo.accuknox.com"
+          accuknox_token: ${{ secrets.ACCUKNOX_TOKEN }}
+          tenant_id: 3730
+          label: "SPOC"
+          input_soft_fail: true
+          skip_sonar_scan: true
 
       # - name: Run IaC scan
       #   uses: accuknox/iac-scan-action@v1.0.0
@@ -52,15 +52,15 @@ jobs:
       #     label: "SPOC"
       #     endpoint: "cspm.demo.accuknox.com"
 
-      # - name: AccuKnox Secret Scan
-      #   uses: accuknox/secret-scan-action@v1.0.1
-      #   with:
-      #     token: ${{ secrets.ACCUKNOX_TOKEN }}
-      #     tenant_id: 3730
-      #     label: "SPOC"
-      #     endpoint:  "cspm.demo.accuknox.com"
-      #     fail: false
-      #     use_extended_ruleset: true
+      - name: AccuKnox Secret Scan
+        uses: accuknox/secret-scan-action@v1.0.1
+        with:
+          token: ${{ secrets.ACCUKNOX_TOKEN }}
+          tenant_id: 3730
+          label: "SPOC"
+          endpoint:  "cspm.demo.accuknox.com"
+          fail: false
+          use_extended_ruleset: true
 
       # - name: Build Docker image
       #   run: |
