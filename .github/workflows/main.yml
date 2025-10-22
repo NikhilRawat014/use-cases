@@ -3,7 +3,7 @@ name: AccuKnox SAST Scan
 on:
   push:
     branches:
-      - all
+      - "*"
 
 jobs:
   ak-scans:
