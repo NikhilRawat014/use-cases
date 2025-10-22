@@ -3,10 +3,10 @@ name: Accuknox SAST
 on:
   push:
     branches:
-      - main
+      - sast
   pull_request:
     branches:
-      - main
+      - sast
 
 jobs:
   accuknox-cicd:
